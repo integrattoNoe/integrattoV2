@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+
+    <style>
+        :root {
+            --fondo: #fff;
+            --txt1: #083db2;
+            --txt2: red;
+
+        }
+
+        body,
+        html {
+            margin: 0;
+            width: 100vw;
+        }
+
+        #loader {
+            position: fixed;
+            height: 100vh;
+            width: 100vw;
+            background-color: var(--fondo);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+
+
+        #integrattoText h1 {
+            opacity: 0;
+            font-size: 8vmin;
+        }
+
+        #integrattoText h1 .char {
+            color: var(--txt1);
+            font-weight: 900;
+            letter-spacing: 2px;
+            transform: translate(-100vw, 0px);
+        }
+
+        #progreso {
+            position: relative;
+            background-color: #fff;
+            padding: 4px 10px;
+            max-width: 800px;
+            width: 70vw;
+            margin-top: 20px;
+        }
+
+        #progreso h1 {
+            color: #fff;
+            text-align: right;
+            z-index: 1;
+            position: relative;
+            font-weight: 900;
+            font-size: 5vmin;
+        }
+
+        #counter {
+            font-size: 4vmin;
+            font-weight: 900;
+            background: #e0716f;
+            color: #416dfb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 10px;
+            padding: 0px 15px;
+            opacity: 0;
+            width: 100px;
+        }
+
+        #mascara {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: red;
+            width: 100%;
+            height: 100%;
+            transform: scaleX(0);
+        }
+
+        #integrattoLogo {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            max-width: 300px;
+            width: 40vw;
+            height: 300px;
+        }
+
+        #integrattoLogo img {
+            width: 100%;
+            transform: translate(0px, 150%);
+        }
+
+        #main {
+            background-color: coral;
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loader">
+        <div class="container">
+            <div id="integrattoText" class="d-flex">
+                <h1>INTEGRATTO</h1>
+                <span id="counter"></span>
+            </div>
+            <div id="progreso">
+                <div id="mascara"></div>
+                <h1>LOVE THRU IDEAS</h1>
+            </div>
+
+            <div id="integrattoLogo">
+                <img src="assets/logo-areas.webp" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div id="main" class="d-flex justify-content-center align-items-center">
+        <h1>Contenido</h1>
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="js/loader1.js"></script>
+</body>
+
+</html>

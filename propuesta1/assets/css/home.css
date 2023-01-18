@@ -5,6 +5,7 @@ body {
   margin: 0;
   padding: 0;
   min-width: 100vw;
+  cursor: url(../img/mouse.png), auto;
 }
 
 html {
@@ -16,6 +17,21 @@ body {
   overflow-x: hidden;
   width: 100vw;
 }
+
+/* CURSOR */
+/* .rounded {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+.pointed {
+  width: 7px;
+  height: 7px;
+  background-color: white;
+  border-radius: 50%;
+  margin-bottom: 20rem;
+} */
 
 .header {
   position: fixed;
@@ -164,7 +180,7 @@ section {
   transition: transform 0.2s;
 }
 
-#proyectos {
+#marca {
   height: 100vh;
   width: 100vw;
   /* background-color: blue; */
@@ -274,6 +290,124 @@ section {
 .logo-nosotros img {
   transform: translateX(-55vw);
   /* transition: all 0.5s; */
+}
+
+/* PROYECTOS */
+#proyectos {
+  height: auto;
+  max-height: 500vh;
+}
+
+.proyecto {
+  display: flex;
+  flex-flow: column;
+  margin-bottom: 50px;
+}
+
+#proyectos .container {
+  align-items: flex-start;
+}
+
+.proyecto-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0px;
+  padding: 200px 0px;
+}
+
+.proyecto-body * {
+  padding: 0;
+  font-size: 6.4rem;
+  display: inline-block;
+  margin-right: 10rem;
+  color: #156eff;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: "Anton";
+}
+
+.proyecto-body img {
+  max-width: 150px;
+  margin: auto;
+}
+
+.octagon {
+  clip-path: polygon(
+    30% 0%,
+    70% 0%,
+    100% 30%,
+    100% 70%,
+    70% 100%,
+    30% 100%,
+    0% 70%,
+    0% 30%
+  );
+  width: 150px;
+  height: 150px;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center;*/
+}
+
+.trapezoid {
+  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+  width: 150px;
+  height: 150px;
+}
+
+.rombus {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  width: 150px;
+  height: 150px;
+}
+
+.proyecto .line {
+  width: 0px;
+  height: 2px;
+  background-color: #fff;
+  /* transition: width 1s; */
+}
+
+.bloque {
+  height: 1200px;
+}
+
+/* PERSONAS */
+#personas {
+  min-height: 100vh;
+}
+
+.listaPersonas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.persona {
+  width: calc(100% / 9);
+  height: auto;
+  margin: 5px;
+  background-color: #2a2a2a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scale: 1;
+}
+
+.img2 {
+  display: none;
+}
+
+.persona img {
+  width: 100%;
+  height: auto;
+}
+
+#personas h2 {
+  font-family: "Anton";
+  font-size: 60px;
+  color: darkorchid;
 }
 
 /* LOADER */

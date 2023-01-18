@@ -1,0 +1,262 @@
+@media (max-width: 990px) { 
+  .main-container {
+    padding: 60px;
+  }
+
+  .title-txt {
+    color: var(--color-blue);
+    font-size: 130px;
+    line-height: 120px;
+    max-width: 405px;
+    position: relative;
+  }
+
+  .logo-banner {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 205px;
+  }
+
+  .subtitle-txt {
+    margin-top: 60px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .btn-ver {
+    margin: 0 auto;
+    display: block;
+  }
+
+  .img-banner {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 400px;
+}
+
+  .amazon-col {
+    display: block;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    height: auto;
+    margin-bottom: 0;
+  }
+
+  .subtitle-txt-white {
+    margin-top: 40px;
+    color: #fff;
+    font-family: 'fixture-light';
+    letter-spacing: 3px;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.title-txt-white {
+  color: #fff;
+  font-size: 120px;
+  font-family: fixture-semibold;
+  line-height: 120px;
+  max-width: 805px;
+  margin: 0;
+  left: 0;
+  position: relative;
+  text-align: center;
+}
+
+.row-max-2 {
+  max-width: 1150px;
+  height: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.img-banner-hsy {
+  width: 330px !important;
+  height: auto !important;
+  max-width: 559px;
+  right: -60px;
+  top: -40px;
+  position: relative;
+}
+
+.title-txt-yellow {
+  color: var(--color-yellow-low);
+  font-size: 120px;
+  font-family: fixture-semibold;
+  line-height: 110px;
+  max-width: 805px;
+  margin: 0;
+  left: -9px;
+  position: relative;
+  text-align: right;
+}
+
+.title-txt-blue {
+  color: var(--color-blue);
+  font-size: 120px;
+  font-family: fixture-semibold;
+  line-height: 100px;
+  max-width: 805px;
+  margin: 0;
+  left: -9px;
+  position: relative;
+}
+
+.img-banner-papirolas {
+  width: 400px;
+  height: auto !important;
+  max-width: 500px;
+  position: absolute;
+  top: 20px;
+  left: -140px;
+}
+
+.title-txt-white-2 {
+  color: #fff;
+  font-size: 170px;
+  font-family: fixture-semibold;
+  line-height: 150px;
+  max-width: 805px;
+  margin: 0 auto;
+  display: block;
+  position: relative;
+}
+
+.img-banner-espiral {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 300px;
+  position: absolute;
+  top: 50%;
+  left: -220px;
+  transform: translate(0px, -50%);
+  z-index: 1;
+}
+
+.txt-right-sm{
+  text-align: right;
+}
+
+.img-proyect, .img-proyect-peloneta, .img-proyect-babysec, .img-proyect-elite, .img-proyect-sello {
+  max-width: 100%;
+}
+
+} 
+
+@media (max-width: 771px) { 
+  .title-txt {
+    color: var(--color-blue);
+    font-size: 105px;
+    line-height: 90px;
+    max-width: 405px;
+    position: relative;
+    text-align: center;
+    left: 0;
+  }
+
+  .main-container {
+    padding: 30px;
+}
+
+.logo-banner {
+  margin-top: 30px;
+}
+
+.main-col{
+  display: block;
+}
+
+.amazon-container {
+  padding: 30px;
+}
+
+.subtitle-txt-white{
+  margin-bottom: 30px;
+}
+
+.title-txt-white, .title-txt-yellow, .title-txt-white-2, .title-txt-blue {
+  font-size: 105px;
+  line-height: 95px;
+}
+
+.img-banner-hsy {
+  width: 330px !important;
+  right: 0px;
+  top: 0px;
+}
+
+.img-banner-coffee {
+  max-width: 250px;
+}
+
+.coffee-col {
+  height: 350px;
+}
+
+.img-banner-papirolas {
+  width: 100%;
+  position: relative;
+  top: initial;
+  left: initial;
+}
+
+.img-banner-espiral {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 300px;
+  position: relative;
+  top: initial;
+  left: initial;
+  transform: none;
+  z-index: 1;
+}
+
+.container1 {
+  column-count: 1;
+  column-gap: 0px;
+}
+
+.carls-container, .peloneta-container, .encajas-container, .sanroque-container, .figure-hard, .babysec-container, .elite-container {
+  margin-bottom: 40px;
+  max-width: 100%;
+}
+
+.kisses-container{
+  height: 600px;
+}
+
+.encajas-container {
+  height: 550px;
+}
+
+.title-txt-white-3 {
+  text-align: center;
+  color: #fff;
+  font-size: 75px;
+  font-family: fixture-semibold;
+  line-height: 70px;
+  max-width: 100%;
+  display: block;
+}
+
+.title-txt-blue-2 {
+  font-size: 105px;
+  line-height: 105px;
+  margin-bottom: 10px;
+}
+
+.footer-list {
+  text-align: center;
+}
+
+.footer-list li{
+  text-align: center;
+  display: block;
+}
+
+.mb-xs-6{
+  margin-bottom: 60px;
+}
+
+}

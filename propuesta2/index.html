@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Integratto</title>
+
+  <!--CSS STYLES & BOOTSTRAP-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <!--Font Awesome-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+    integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+
+  <link rel='stylesheet' id='65db-style-css' href='https://65db.fr/wp-content/themes/65db/style.css' type='text/css'
+    media='all' />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+  <style>
+    body {
+      overflow: hidden;
+    }
+
+    /* .container-fluid {
+      display: none;
+    } */
+
+    #loader {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      z-index: 10000;
+      background-color: #e0716f;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    .absolute-full {
+      height: 100%;
+      left: 0;
+      top: 0;
+      width: 100%;
+    }
+
+    .absolute,
+    .absolute-full {
+      position: absolute;
+    }
+
+    /* body {
+      background: #014040;
+    } */
+
+    body #container {
+      width: 50vw;
+      height: 50vw;
+      margin: 0 auto;
+      padding: 50px;
+      max-width: 300px;
+      max-height: 300px;
+    }
+
+    body #container #circle-loader-wrap {
+      overflow: hidden;
+      position: relative;
+      margin-top: -10px;
+      width: 100%;
+      height: 100%;
+      box-shadow: 0px 0px 20px rgb(0 0 0 / 10%) inset;
+      /* background-color: #25909c; */
+      border-radius: 200px;
+      /* -ms-transform: rotate(180deg); */
+      /* -webkit-transform: rotate(180deg); */
+      /* -moz-transform: rotate(180deg); */
+      /* transform: rotate(180deg); */
+    }
+
+    body #container #circle-loader-wrap:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 90%;
+      height: 90%;
+      border-radius: 50%;
+      background-color: #e0716f;
+      box-shadow: 0 0 10px rgb(0 0 0 / 20%);
+      margin: auto;
+      right: 0;
+      bottom: 0;
+    }
+
+    body #container #circle-loader-wrap div {
+      overflow: hidden;
+      position: absolute;
+      width: 50%;
+      height: 100%;
+    }
+
+    body #container #circle-loader-wrap .loader {
+      position: absolute;
+      left: 100%;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 1000px;
+      background-color: #083db2;
+    }
+
+    body #container #circle-loader-wrap .left-wrap {
+      left: 0;
+    }
+
+    body #container #circle-loader-wrap .left-wrap .loader {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      transform-origin: 0 50% 0;
+      -webkit-transform-origin: 0 50% 0;
+      animation: loading-left 20s infinite linear;
+      -webkit-animation: loading-left 20s infinite linear;
+    }
+
+    body #container #circle-loader-wrap .right-wrap {
+      left: 50%;
+    }
+
+    body #container #circle-loader-wrap .right-wrap .loader {
+      left: -100%;
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+      transform-origin: 100% 50% 0;
+      -webkit-transform-origin: 100% 50% 0;
+      animation: loading-right 20s infinite linear;
+      -webkit-animation: loading-right 20s infinite linear;
+    }
+
+    /* @keyframes loading-left {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      25% {
+        transform: rotate(180deg);
+      }
+
+      50% {
+        transform: rotate(180deg);
+      }
+
+      75% {
+        transform: rotate(180deg);
+      }
+
+      100% {
+        transform: rotate(180deg);
+      }
+    }
+
+    @-webkit-keyframes loading-left {
+      0% {
+        -webkit-transform: rotate(0deg);
+      }
+
+      25% {
+        -webkit-transform: rotate(180deg);
+      }
+
+      50% {
+        -webkit-transform: rotate(180deg);
+      }
+
+      75% {
+        -webkit-transform: rotate(180deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(180deg);
+      }
+    }
+
+    @keyframes loading-right {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      25% {
+        transform: rotate(0deg);
+      }
+
+      50% {
+        transform: rotate(180deg);
+      }
+
+      75% {
+        transform: rotate(180deg);
+      }
+
+      100% {
+        transform: rotate(180deg);
+      }
+    }
+
+    @-webkit-keyframes loading-right {
+      0% {
+        -webkit-transform: rotate(0deg);
+      }
+
+      25% {
+        -webkit-transform: rotate(0deg);
+      }
+
+      50% {
+        -webkit-transform: rotate(180deg);
+      }
+
+      75% {
+        -webkit-transform: rotate(180deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(180deg);
+      }
+    } */
+
+    #logoLoader {
+      position: absolute;
+      z-index: 10;
+      width: 80%;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      scale: 0;
+    }
+
+    .band {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-flow: column;
+    }
+
+    #progresoCount {
+      position: absolute;
+      z-index: 10;
+      width: 80%;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    #progresoCount {
+      font-size: 10vmin;
+      font-weight: bold;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #loader .svg-wrapper {
+      overflow: hidden;
+    }
+
+    .absolute-full {
+      height: 100%;
+      left: 0;
+      top: 0;
+      width: 100%;
+    }
+
+    .absolute,
+    .absolute-full {
+      position: absolute;
+    }
+
+    #loader .background .svg-wrapper svg {
+      position: absolute;
+      fill: #fff;
+      opacity: 0.2;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    #loader .background .svg-wrapper svg.lighting {
+      transform: rotate(-7deg);
+      width: 29rem;
+      right: -10rem;
+      top: -17rem;
+      animation: floatR 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+    }
+
+    @media (min-width: 768px) {
+      #loader .background .svg-wrapper svg.lighting {
+        width: 39rem;
+        top: -27rem;
+        left: 29rem;
+        right: auto;
+      }
+    }
+
+    #loader .background .svg-wrapper svg.triangle {
+      width: 20rem;
+      top: 25rem;
+      left: -7rem;
+      transform: rotate(13deg);
+      animation: float 2.4s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+    }
+
+    @media (min-width: 768px) {
+      #loader .background .svg-wrapper svg.triangle {
+        width: 28rem;
+        bottom: -14rem;
+        left: 49rem;
+        top: auto;
+      }
+    }
+
+    #loader .background .svg-wrapper svg.circle {
+      bottom: -22rem;
+      right: -18rem;
+      width: 42rem;
+      animation: float 2.6s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+    }
+
+    @media (min-width: 768px) {
+      #loader .background .svg-wrapper svg.circle {
+        width: 96rem;
+        bottom: -49rem;
+        left: -64rem;
+        right: auto;
+      }
+    }
+
+    #loader .background .svg-wrapper svg.half-circle {
+      animation: floatR 3s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      #loader .background .svg-wrapper svg.half-circle {
+        display: block;
+        width: 116rem;
+        top: -23rem;
+        right: -73rem;
+        transform: rotate(24deg);
+      }
+    }
+
+    #loader .svg-wrapper {
+      overflow: hidden;
+    }
+
+
+    @keyframes dirrtl {
+      0% {
+        transform: translate3d(0, 0, 0);
+        /* position initiale à droite */
+      }
+
+      100% {
+        transform: translate3d(-50%, 0, 0);
+        /* position finale à gauche */
+      }
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-3%);
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    @keyframes floatR {
+      0% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(4%);
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
+    }
+  </style>
+
+  <script>
+    // ; (function () {
+    //   function id(v) { return document.getElementById(v); }
+    //   function loadbar() {
+    //     var ovrl = id("overlay"),
+    //       prog = id("progress"),
+    //       stat = id("progstat"),
+    //       img = document.images,
+    //       c = 0,
+    //       tot = img.length;
+    //     if (tot == 0) return doneLoading();
+
+    //     function imgLoaded() {
+    //       c += 1;
+    //       var perc = ((100 / tot * c) << 0) + "%";
+    //       prog.style.width = perc;
+    //       stat.innerHTML = "Loading " + perc;
+    //       if (c === tot) return doneLoading();
+    //     }
+    //     function doneLoading() {
+    //       ovrl.style.opacity = 0;
+    //       setTimeout(function () {
+    //         ovrl.style.display = "none";
+    //       }, 1200);
+    //     }
+    //     for (var i = 0; i < tot; i++) {
+    //       var tImg = new Image();
+    //       tImg.onload = imgLoaded;
+    //       tImg.onerror = imgLoaded;
+    //       tImg.src = img[i].src;
+    //     }
+    //   }
+    //   document.addEventListener('DOMContentLoaded', loadbar, false);
+    // }());
+  </script>
+
+</head>
+
+<body class="">
+
+  <div id="loader">
+    <div class="background absolute-full">
+      <div class="band">
+        <div>
+          <div id="container">
+            <div id="circle-loader-wrap">
+              <!-- <img src="assets/icon-integratto-2.png" alt="" id="logoLoader"> -->
+              <img src="assets/logo-areas.webp" alt="" id="logoLoader">
+              <span id="progresoCount">
+                0
+              </span>
+              <div class="left-wrap">
+                <div class="loader"></div>
+              </div>
+              <div class="right-wrap">
+                <div class="loader"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="svg-wrapper absolute-full">
+        <svg viewBox="0 0 126 166" fill="none" xmlns="http://www.w3.org/2000/svg" class="lighting">
+          <path
+            d="M125.111 86.92 69.864 62.855l47.87-55.947L59.497.742.663 80.97l53.228 23.184-48.078 60.862L125.11 86.919Z">
+          </path>
+        </svg> <svg viewBox="0 0 112 159" fill="none" xmlns="http://www.w3.org/2000/svg" class="triangle">
+          <path d="M97.131.916 0 45.181l111.438 113.571L97.131.916Z"></path>
+        </svg> <svg viewBox="0 0 179 179" xmlns="http://www.w3.org/2000/svg" class="circle">
+          <path
+            d="M89.5 155.157c-36.26 0-65.656-29.395-65.656-65.655 0-36.263 29.396-65.658 65.656-65.658 36.265 0 65.656 29.395 65.656 65.658 0 36.26-29.391 65.655-65.656 65.655ZM89.5 0C40.071 0 0 40.07 0 89.502 0 138.93 40.071 179 89.5 179S179 138.93 179 89.502C179 40.07 138.929 0 89.5 0Z">
+          </path>
+        </svg>
+        <svg viewBox="0 0 146 149" xmlns="http://www.w3.org/2000/svg" class="half-circle">
+          <path
+            d="M42.982 44.904c-23 23.825-22.332 61.785 1.493 84.786l-17.849 18.488C-7.408 115.321-8.361 61.09 24.495 27.056c32.859-34.036 87.087-34.99 121.122-2.131l-17.848 18.488c-23.826-23.002-61.784-22.335-84.787 1.491Z">
+          </path>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+
+  <!--NAV BAR-->
+  <div class="container-fluid ">
+    <div class="row row-max">
+      <div class="col">
+        <nav class="nav-menu">
+          <a href="index.html"><img class="logo-menu" src="assets/logo-integratto.png" alt="Logo HERSHEY'S" width="266"
+              height="113"></a>
+          <a href="index.html" class="btn-menu" aria-label="Menú"></a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!--Banners-->
+  <div class="container-fluid full-container main-container bg-green">
+    <div class="row row-max">
+      <div class="col-12 p-0">
+        <h2 class="title-banner">¿Y SI LAS MARCAS</h2>
+        <h2 class="linea-2 title-banner">PUDIERAN APORTAR</h2>
+        <h2 class="linea-3 title-banner">ALGO AL MUNDO?</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid full-container main-container bg-pink-hard">
+    <div class="row row-max">
+      <div class="col-12 p-0">
+        <h2 class="title-banner2">PRIME</h2>
+        <div class="contenedor-amazon">
+          <p class="title-prime">YA ESTÁ EN CASA</p>
+          <p class="subtitle-prime">LOVE THRU IDEAS</p>
+          <img class="img-amazon" src="assets/img-play.webp" alt="Bienvenido Amazon Prime">
+        </div>
+        <h2 class="title-banner2">VIDEO</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid full-container main-container bg-blue">
+    <div class="row row-max">
+      <div class="col-12 p-0">
+        <h2 class="title-banner4 pl-5">UNA ACTIVIDAD </h2>
+        <div class="flex-container"><img class="icon-integratto" src="assets/icon-integratto.png">
+          <h2 class="title-banner3">ESTRATÉGICA</h2>
+        </div>
+        <h2 class="title-banner4">CON ENFOQUE MÁS HUMANO</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid full-container main-container bg-blue-hard">
+    <div class="row row-max">
+      <div class="col-12 p-0">
+        <h2 class="title-banner5 pl-5">CADA VEZ SOMOS</h2>
+        <div class="flex-container">
+          <div class="inner-container">
+            <img class="icon-integratto2" src="assets/icon-integratto-2.png">
+            <h2 class="title-banner5">MÁS LOS QUE </h2>
+          </div>
+        </div>
+        <h2 class="title-banner5">QUERMOS UN CAMBIO </h2>
+      </div>
+    </div>
+  </div>
+
+
+  <!--Main-->
+  <div class="container-fluid full-container main-container">
+    <div class="row row-max">
+      <div class="col-8 p-0 main-col">
+        <h2 class="title-txt">QUEREMOS HACERLO BIEN</h2>
+        <div class="m-0">
+          <img class="logo-banner" src="assets/logo-banner.webp" alt="Logo HERSHEY'S" width="540" height="527">
+        </div>
+      </div>
+      <div class="col-12 p-0">
+        <p class="subtitle-txt">Creemos en las Ideas que pueden dar de regreso.</p>
+        <button class="btn-ver">Ver más <i class="fas fa-plus"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!--Proyecto Amazon-->
+  <div class="container-fluid full-container amazon-container bg-blue">
+    <div class="row row-max-2">
+      <div class="col-12 col-lg-7 col-md-7 col-sm-12 amazon-col">
+        <div class="">
+          <h1 class="title-txt-white">AMAZON PRIME</h1>
+          <p class="subtitle-txt-white mt-2 mb-sm-4">LOS TIGRES DEL NORTE</p>
+        </div>
+      </div>
+      <div class="col-12 col-lg-5 col-md-5 col-sm-12 amazon-col">
+        <img class="img-banner" src="assets/banner-amazon.webp" alt="Logo HERSHEY'S" width="540" height="527">
+      </div>
+    </div>
+  </div>
+
+  <!--Proyecto HERSHEY'S-->
+  <div class="container-fluid full-container amazon-container bg-pink">
+    <div class="row row-max-2">
+      <div class="col-12 col-lg-5 col-md-5 col-sm-3 amazon-col">
+        <img class="img-banner-hsy" src="assets/banner-hersheys.webp" alt="Logo HERSHEY'S" width="540" height="527">
+      </div>
+      <div class="col-12 col-lg-7 col-md-7 col-sm-9 amazon-col">
+        <div class="">
+          <h1 class="title-txt-yellow">HERSHEY'S</h1>
+          <p class="subtitle-txt-white txt-right mt-2">ICE CREAM SHOP</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Proyecto HERSHEY'S COFFEE CREATIONS-->
+  <div class="container-fluid full-container amazon-container bg-green">
+    <div class="row coffee-row row-max-2">
+      <div class="col coffee-col">
+        <img class="img-banner-coffee" src="assets/banner-coffee.webp" alt="Logo HERSHEY'S" width="540" height="527">
+        <h1 class="title-txt-white-2">HERSHEY'S</h1>
+        <p class="subtitle-txt-white-2 mt-2">COFFEE CREATIONS</p>
+      </div>
+    </div>
+  </div>
+
+  <!--Proyecto Papirolas-->
+  <div class="container-fluid full-container amazon-container bg-blue-hard">
+    <div class="row row-max-2">
+      <div class="col-12 col-lg-7 col-md-7 amazon-col">
+        <div class="">
+          <h1 class="title-txt-blue">PAPIROLAS</h1>
+          <p class="subtitle-txt-white mt-3">FESTIVAL 2022</p>
+        </div>
+      </div>
+      <div class="col-12 col-lg-5 col-md-5 amazon-col position-relative">
+        <img class="img-banner-papirolas" src="assets/banner-papirolas.webp" alt="Logo HERSHEY'S" width="540"
+          height="527">
+      </div>
+    </div>
+  </div>
+
+  <!--Proyecto Papirolas-->
+  <div class="container-fluid full-container amazon-container bg-yellow-hard">
+    <div class="row row-max-2">
+      <div class="col-12 col-lg-6 col-sm-6 amazon-col">
+      </div>
+      <div class="col-12 col-lg-6 col-sm-6 amazon-col position-relative">
+        <img class="img-banner-espiral" src="assets/banner-espiral.webp" alt="Logo HERSHEY'S" width="540" height="527">
+        <div class="">
+          <h1 class="title-txt-white txt-right-sm">ESPIRAL</h1>
+          <p class="subtitle-txt-white mt-2 txt-right">IDENTIDAD DE MARCA</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Proyecto Papirolas-->
+  <div class="container-fluid bg-white">
+    <div class="row row-max-2 mt-5">
+      <div class="col-12 p-3 mt-5 mb-5">
+        <button class="btn-proyectos">Ver Proyectos <i class="fas fa-plus"></i></button>
+      </div>
+      <div class="col-12 p-3">
+        <div class="container1 mt-5">
+          <figure class="figure-low carls-container">
+            <p class="title-proyect"><a href="#">Carls Jr</a></p>
+            <div class="image-container">
+              <img class="img-proyect" src="assets/banner-carls.webp" alt="Carls Jr" />
+            </div>
+          </figure>
+          <figure class="figure-low peloneta-container">
+            <p class="title-proyect"><a href="#">Peloneta</a></p>
+            <div class="image-container">
+              <img class="img-proyect-peloneta" src="assets/banner-peloneta.webp" alt="Peloneta" />
+            </div>
+          </figure>
+          <figure class="figure-hard encajas-container">
+            <p class="title-proyect"><a href="#">Pelon en caja</a></p>
+            <img src="assets/banner-encajas.webp" alt="Pelon en caja" />
+          </figure>
+          <figure class="figure-low sanroque-container">
+            <p class="title-proyect"><a href="#">San Roque</a></p>
+            <div class="image-container">
+              <img class="img-proyect-babysec" src="assets/banner-sanroque.webp" alt="San Roque" />
+            </div>
+          </figure>
+          <figure class="figure-hard kisses-container">
+            <p class="title-proyect"><a href="#">Kisses Navidad 2021</a></p>
+            <img src="assets/banner-kisses.webp" alt="Kisses Navidad 2021" />
+          </figure>
+          <figure class="figure-low babysec-container">
+            <p class="title-proyect"><a href="#">Babysec</a></p>
+            <div class="image-container">
+              <img class="img-proyect-babysec" src="assets/banner-babysec.webp" alt="Babysec" />
+            </div>
+          </figure>
+          <figure class="figure-low elite-container">
+            <p class="title-proyect"><a href="#">Elite</a></p>
+            <div class="image-container">
+              <img class="img-proyect-elite" src="assets/banner-elite.webp" alt="Elite" />
+            </div>
+          </figure>
+          <figure class="figure-hard sello-container">
+            <p class="title-proyect"><a href="#">Sello Rojo</a></p>
+            <div class="image-container">
+              <img class="img-proyect-sello" src="assets/banner-bolsa.webp" alt="Sello Rojo" />
+            </div>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Áreas-->
+  <div class="container-fluid full-container bg-blue main-container">
+    <div class="row row-max">
+      <div class="col-12">
+        <h2 class="title-txt-white-3">NUESTRAS ÁREAS DE EXPERIENCIA</h2>
+      </div>
+      <div class="col-12 ">
+        <div class="row">
+          <div class="col-12 col-lg-8 col-md-8 offset-0 offset-md-4 offset-lg-4 areas-container">
+            <div>
+              <img class="logo-banner" src="assets/logo-areas.webp" alt="Logo Integratto" width="540" height="527">
+            </div>
+            <div>
+              <ul class="areas-list">
+                <li>Estrategia & Identidad de Marca</li>
+                <li>Campañas de Comunicación</li>
+                <li>Packaging & Trade Marketing</li>
+                <li>Producción Audiovisual.</li>
+                <li>Tecnología de ( comunicación / marca / comercial).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Clientes-->
+  <div class="container-fluid full-container bg-pink-hard main-container">
+    <div class="row row-max">
+      <div class="col-12">
+        <h2 class="title-txt-blue-2">CLIENTES</h2>
+        <img class="img-clientes d-none d-sm-block" src="assets/clientes.webp" alt="Logos clientes" width="540"
+          height="527">
+        <img class="img-clientes d-block d-sm-none " src="assets/clientes-mobile.webp" alt="Logos clientes" width="540"
+          height="527">
+      </div>
+    </div>
+  </div>
+
+  <!--Top footer-->
+  <div class="container-fluid bg-blue">
+    <div class="row">
+      <div class="col-12 p-4">
+        <img class="logo-banner-2" src="assets/logo-footer.webp" alt="Logos clientes" width="540" height="527">
+      </div>
+    </div>
+  </div>
+
+  <!--FOOTER-->
+  <div class="container-fluid footer-container pt-5 pb-5 bg-blue-hard">
+    <div class="row row-max-3">
+      <div class="col-12 col-lg-6 col-md-6">
+        <ul class="footer-list">
+          <li>© Integratto 2022</li>
+        </ul>
+      </div>
+      <div class="col-12 col-lg-6 col-md-6">
+        <ul class="footer-list">
+          <li><a href="#">Política Cookies.</a></li>
+          <li><a href="#">Política de Privacidad.</a></li>
+          <li>Todos los derechos reservados.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!--BOOTSTRAP JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+    integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+    crossorigin="anonymous"></script>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
